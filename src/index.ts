@@ -21,8 +21,13 @@ app.get("/", (req, res) => {
 
 app.use("/api", router);
 
-app.listen(port, () =>
-  console.log("Server is running on http://localhost:" + port + "/")
-);
-
+if (process.env.NODE_ENV !== "test") {
+  const port = process.env.PORT ?? 3000;
+  (async () => {
+    await DBConnection.connect();
+    app.listen(port, () => {
+      console.log("Server is running on http://localhost:" + port + "/");
+    });
+  })();
+}
 export default app;

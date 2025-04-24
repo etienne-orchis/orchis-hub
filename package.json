@@ -7,7 +7,7 @@
     "start": "ts-node-dev src/index.ts",
     "build": "tsc -p tsconfig.json",
     "init-ts": "tsc --init",
-    "test": "jest",
+    "test": "NODE_ENV=test jest",
     "test:jest": "jest --watchAll"
   },
   "keywords": [],
