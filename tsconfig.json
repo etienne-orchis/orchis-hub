@@ -1,5 +1,6 @@
 {
   "compilerOptions": {
+    "types": ["node", "jest"],
     "target": "es2016",
     "module": "commonjs",
     "esModuleInterop": true,
@@ -7,5 +8,6 @@
     "strict": true,
     "skipLibCheck": true,
     "outDir": "./dist"
-  }
+  },
+  "include": ["src", "tests"]
 }

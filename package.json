@@ -6,13 +6,21 @@
   "scripts": {
     "start": "ts-node-dev src/index.ts",
     "build": "tsc -p tsconfig.json",
-    "init-ts": "tsc --init"
+    "init-ts": "tsc --init",
+    "test": "jest"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@types/node": "^20.16.4"
+    "@testcontainers/mongodb": "^10.24.2",
+    "@types/jest": "^29.5.14",
+    "@types/node": "^20.17.30",
+    "@types/supertest": "^6.0.3",
+    "jest": "^29.7.0",
+    "mongodb-memory-server": "^10.1.4",
+    "supertest": "^7.1.0",
+    "ts-jest": "^29.3.2"
   },
   "dependencies": {
     "@types/cors": "^2.8.17",
