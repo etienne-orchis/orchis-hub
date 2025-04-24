@@ -23,7 +23,8 @@ describe("EmployeeService", () => {
 
   it("should save and retrieve an employee", async () => {
     const newEmployee = { name: "John Doe" };
-    await EmployeeService.create(newEmployee);
+    const newId = await EmployeeService.create(newEmployee);
+    expect(newId).toBeTruthy();
     const employees = await EmployeeService.findAll();
     expect(employees).toHaveLength(1);
     expect(employees[0].name).toBe("John Doe");
