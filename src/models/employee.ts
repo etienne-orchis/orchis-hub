@@ -1,6 +1,7 @@
-import { Schema, model } from "mongoose";
+import { ObjectId, Schema, model } from "mongoose";
 
-interface IEmployee {
+export interface IEmployee {
+  _id?: string | ObjectId;
   name: string;
 }
 
