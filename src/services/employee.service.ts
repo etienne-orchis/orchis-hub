@@ -13,4 +13,15 @@ export default class EmployeeService {
       throw error.toString();
     }
   };
+
+  static readonly update = async (
+    _id: string,
+    data: Partial<IEmployee>
+  ): Promise<void> => {
+    await Employee.updateOne({ _id }, { $set: data });
+  };
+
+  static readonly findById = async (_id: string): Promise<IEmployee | null> => {
+    return await Employee.findById(_id);
+  };
 }
