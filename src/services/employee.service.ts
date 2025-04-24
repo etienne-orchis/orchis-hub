@@ -8,7 +8,7 @@ export default class EmployeeService {
     try {
       const newEmployee = new Employee({ name: employee.name });
       await newEmployee.save();
-      return `New employee created successfully , with the _id ${newEmployee._id as string}`;
+      return newEmployee._id as string;
     } catch (error: any) {
       throw error.toString();
     }
