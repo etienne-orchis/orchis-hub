@@ -11,9 +11,9 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-(async () => {
-  await DBConnection.connect();
-})();
+// (async () => {
+//   await DBConnection.connect();
+// })();
 
 app.get("/", (req, res) => {
   res.send("Hello, World!");
@@ -24,3 +24,5 @@ app.use("/api", router);
 app.listen(port, () =>
   console.log("Server is running on http://localhost:" + port + "/")
 );
+
+export default app;
