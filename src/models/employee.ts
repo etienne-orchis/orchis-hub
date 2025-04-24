@@ -5,9 +5,14 @@ export interface IEmployee {
   name: string;
 }
 
-const employeeSchema = new Schema<IEmployee>({
-  name: { type: String, required: true },
-});
+const employeeSchema = new Schema<IEmployee>(
+  {
+    name: { type: String, required: true },
+  },
+  {
+    versionKey: false,
+  }
+);
 
 const Employee = model<IEmployee>("Employee", employeeSchema);
 
